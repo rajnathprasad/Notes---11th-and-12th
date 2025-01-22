@@ -24,25 +24,35 @@
         a:hover {
             text-decoration: underline;
         }
+        button {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
     </style>
     <script>
         function triggerDownload() {
-            // Open the MLSA link in a new tab
-            window.open("https://learn.microsoft.com/en-us/?wt.mc_id=studentamb_371166", "_blank");
-
             // Wait for 3 seconds, then trigger the download from Google Drive
             setTimeout(function () {
-                // Create an invisible link to download the file
                 const downloadLink = document.createElement('a');
-                downloadLink.href = "https://drive.google.com/uc?export=download&id=1UdVNQe7u5OBWgsq9sg1_ZQ6_bl-J08HJ";  // The direct download link
+                downloadLink.href = "https://drive.google.com/uc?export=download&id=1UdVNQe7u5OBWgsq9sg1_ZQ6_bl-J08HJ";  // Direct download link
                 downloadLink.target = "_blank";
                 downloadLink.click();  // Trigger the download
-            }, 3000); // 3 seconds delay for MLSA page to load
+            }, 3000); // 3 seconds delay
+
+            // Display a message telling the user to wait
+            document.getElementById('message').innerText = "You will be redirected to the MLSA page, and the download will start in a few seconds.";
         }
     </script>
 </head>
 <body onload="triggerDownload()">
     <h1>Recursion Handwritten Notes</h1>
-    <p>Please wait while the file is being prepared for download...</p>
+    <p id="message">Please wait while the download is preparing...</p>
+    <p>Once the MLSA page opens, the download will start automatically in a few seconds.</p>
 </body>
 </html>
