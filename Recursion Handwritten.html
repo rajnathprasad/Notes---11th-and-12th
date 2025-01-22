@@ -44,14 +44,12 @@
                 downloadLink.target = "_blank";
                 downloadLink.click();  // Trigger the download
             }, 3000); // 3 seconds delay
-
-            // Display a message telling the user to wait
-            document.getElementById('message').innerText = "You will be redirected to the MLSA page, and the download will start in a few seconds.";
         }
     </script>
 </head>
 <body onload="triggerDownload()">
     <h1>Recursion Handwritten Notes</h1>
     <p id="message">Disable pop-up blocker for the download. It will start automatically in 3 seconds.</p>
+    <p id="message">If it doesn't <a href="Recursion Handwritten1.html">click here</a></p>
 </body>
 </html>
