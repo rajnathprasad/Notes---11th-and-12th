@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Class Notes</h1>
+    <p>Select a chapter to view its notes:</p>
+    <ul>
+        <li><a href="Recursion Handwritten.html">Recursion</a></li>
+        <li><a href="chapter2.html">Data Structure - Stacks</a></li>
+        <li><a href="chapter3.html">Upcoming</a></li>
+    </ul>
+</body>
+</html>
+
+and here's "recurion handwritten.html" :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function redirectTo() {
+            // Open the MLSA link in a new tab
+            window.open("https://learn.microsoft.com/en-us/?wt.mc_id=studentamb_371166", "_blank");
+            // Redirect to the notes after 3 seconds
+            setTimeout(function () {
+                window.location.href = "https://drive.google.com/file/d/1UdVNQe7u5OBWgsq9sg1_ZQ6_bl-J08HJ/view?usp=drive_link";
+            }, 3000);
+        }
+    </script>
+</head>
+<body>
+    <h1>Recursion Handwritten Notes</h1>
+    <p>Click the link and wait 3 seconds :</p>
+    <ul>
+        <li><a href="#" onclick="redirectTo()">Download Now</a></li>
+    </ul>
+</body>
+</html>
