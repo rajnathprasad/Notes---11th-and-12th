@@ -36,28 +36,27 @@
         }
     </style>
     <script>
-        function triggerDownload() {
-            // Wait for 3 seconds, then trigger the download from Google Drive
-            setTimeout(function () {
-                const downloadLink = document.createElement('a');
-                downloadLink.href = "https://drive.google.com/uc?export=download&id=1UdVNQe7u5OBWgsq9sg1_ZQ6_bl-J08HJ";  // Direct download link
-                downloadLink.target = "_blank";
-                downloadLink.click();  // Trigger the download
-            }, 3000); // 3 seconds delay
-        }
+        // function triggerDownload() {
+        //     // Wait for 3 seconds, then trigger the download from Google Drive
+        //     setTimeout(function () {
+        //         const downloadLink = document.createElement('a');
+        //         downloadLink.href = "https://drive.google.com/uc?export=download&id=1UdVNQe7u5OBWgsq9sg1_ZQ6_bl-J08HJ";  // Direct download link
+        //         downloadLink.target = "_blank";
+        //         downloadLink.click();  // Trigger the download
+        //     }, 3000); // 3 seconds delay
+        // }
         function redirectTo() {
             // Open the MLSA link in a new tab
             window.open("https://learn.microsoft.com/en-us/?wt.mc_id=studentamb_371166", "_blank");
             // Redirect to the notes after 3 seconds
             setTimeout(function () {
                 window.location.href = "https://drive.google.com/uc?export=download&id=1UdVNQe7u5OBWgsq9sg1_ZQ6_bl-J08HJ";
-            }, 3000);
+            }, 10000);
         }
     </script>
 </head>
 <body onload="triggerDownload()">
     <h1>Recursion Handwritten Notes</h1>
-    <p id="message">Disable pop-up blocker for the download. It will start automatically in 3 seconds.</p>
-    <p id="message">If it doesn't <a href="#" onclick="redirectTo()">Click here</a></p>
+    <p id="message"><a href="#" onclick="redirectTo()">Click here</a> and spend 10 seconds to start download!</p>
 </body>
 </html>
