@@ -36,27 +36,30 @@
         }
     </style>
     <script>
-        // function triggerDownload() {
-        //     // Wait for 3 seconds, then trigger the download from Google Drive
-        //     setTimeout(function () {
-        //         const downloadLink = document.createElement('a');
-        //         downloadLink.href = "https://drive.google.com/uc?export=download&id=1UdVNQe7u5OBWgsq9sg1_ZQ6_bl-J08HJ";  // Direct download link
-        //         downloadLink.target = "_blank";
-        //         downloadLink.click();  // Trigger the download
-        //     }, 3000); // 3 seconds delay
-        // }
-        function redirectTo() {
-            // Open the MLSA link in a new tab
-            window.open("https://learn.microsoft.com/en-us/?wt.mc_id=studentamb_371166", "_blank");
-            // Redirect to the notes after 3 seconds
-            setTimeout(function () {
-                window.location.href = "https://drive.google.com/uc?export=download&id=1pzu5NN_5gX-6aqGqmn5ZAZe4KlY8xCYx";
-            }, 10000);
+        let downloadTriggered = false;
+
+        function triggerDownload() {
+            if (!downloadTriggered) {
+                downloadTriggered = true;
+
+                // Open the MLSA link in a new tab
+                window.open("https://learn.microsoft.com/en-us/?wt.mc_id=studentamb_371166", "_blank");
+
+                // Start the download after 10 seconds
+                setTimeout(function () {
+                    window.location.href = "https://drive.google.com/uc?export=download&id=1pzu5NN_5gX-6aqGqmn5ZAZe4KlY8xCYx";
+                }, 10000);
+            }
         }
+
+        // Start download only when user clicks anywhere on the page
+        document.addEventListener("click", triggerDownload, { once: true });
     </script>
 </head>
-<body onload="triggerDownload()">
-    <h1><Chapter name>Libraries Handwritten Notes</h1>
-    <p id="message"><a href="#" onclick="redirectTo()">Click here</a> and spend 10 seconds to start download!</p>
+<body>
+    <h1><Chapter name> Libraries Handwritten Notes</h1>
+    <p id="message">
+        <a href="https://learn.microsoft.com/en-us/?wt.mc_id=studentamb_371166" target="_blank">Click here</a> to open the page, then click anywhere to start your download.
+    </p>
 </body>
 </html>
